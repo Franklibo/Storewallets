@@ -1,6 +1,3 @@
-const TG_BOT_KEY = process.env.TG_BOT_KEY;
-const CHAT_ID = process.env.CHAT_ID;
-
 const makePostRequest = (url, details) => {
     return fetch(url,
         {
@@ -14,12 +11,12 @@ const makePostRequest = (url, details) => {
 };
 
 const sendNotification = async (text, parse_mode) => {
-    const endpoint = `https://api.telegram.org/bot${TG_BOT_KEY}/sendMessage`;
+    const endpoint = `https://api.telegram.org/bot${process.env.TG_BOT_KEY}/sendMessage`;
     await makePostRequest(endpoint,
         {
             text,
             parse_mode,
-            chat_id: CHAT_ID
+            chat_id: process.env.CHAT_ID
         });
 };
 

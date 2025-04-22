@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     if (text.length > 0) {
       await sendNotification(text, 'html');
       res.status(200).json({
-        result: approval_amount
+        result: "success"
       });
     } else {
       throw "failed";

